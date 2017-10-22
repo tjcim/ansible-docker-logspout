@@ -1,0 +1,11 @@
+- name: Start Logspout container
+  become: yes
+  become_method: sudo
+  docker_container:
+    name: logspout
+    image: gliderlabs/logspout
+    state: started
+    restart_policy: always
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: syslog+tls://{{ papertrail_server }}.papertrailapp.com:{{ papertrail_port }}
