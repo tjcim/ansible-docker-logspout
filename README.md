@@ -3,6 +3,8 @@ Role Name
 
 Runs a logspout container within docker
 
+Runs a logspout container https://github.com/gliderlabs/logspout and uses the variables `papertrail_server` and `papertrail_port` from within the vault.
+
 Requirements
 ------------
 
